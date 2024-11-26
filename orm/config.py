@@ -8,11 +8,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 #1. Configurar la conexion BD
 # Crear la URL de la BD -> servidorBD://usuario:password@url:puerto/nombreBD
-URL_BASE_DATOS = "postgresql://usuario-ejemplo:12345@localhost:5432/base-ejemplo"
+URL_BASE_DATOS = "postgresql://usuario_ejemplo:Aa3158134979@localhost:5432/base_ejemplo"
 # Conectarnos mediante el esquema app
 engine = create_engine(URL_BASE_DATOS,
                        connect_args={
-                           "options": "-csearch_path=app"                           
+                           "options": "-csearch_path=app"  #Para que la BD se conecte por medio del esquema
                        })
 
 #2. Obtener la clase que nos permite crear objetos tipo session
@@ -27,4 +27,4 @@ def generador_sesion():
         sesion.close()
 
 #3.- Obtener la clase base para mapear tablas
-BaseClass = declarative_base()
+BaseClass = declarative_base()  #Para poder crear el modelo
