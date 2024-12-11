@@ -6,7 +6,7 @@ import os
 import uuid
 import orm.repo as repo # Función para hacer las consultas a la BD
 from sqlalchemy.orm import Session
-from orm.config import generador_sesion # Generador de sesiones
+from orm.config import generador_sesion # Generador de sesiones sss
 
 # creación del servidor
 app = FastAPI()
